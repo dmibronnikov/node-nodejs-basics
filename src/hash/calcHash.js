@@ -1,6 +1,6 @@
 import { pipeline } from 'stream/promises';
 import { Writable } from 'stream';
-import { createReadStream, createWriteStream } from 'fs';
+import { createReadStream } from 'fs';
 import { createHash } from 'crypto';
 
 const calculateHash = async () => {
