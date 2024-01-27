@@ -1,13 +1,13 @@
 import path from 'path';
 import { release, version } from 'os';
 import { createServer as createServerHttp } from 'http';
+import { createRequire } from 'module';
 import './files/c.js';
-import a from './files/a.json' with { type: 'json' };
-import b from './files/b.json' with { type: 'json' };
 
+const require = createRequire(import.meta.url);
 const random = Math.random();
 
-export let unknownObject = random > 0.5 ? a : b;
+export let unknownObject = random > 0.5 ? require('./files/a.json') : require('./files/b.json');
 
 console.log(`Release ${release()}`);
 console.log(`Version ${version()}`);
