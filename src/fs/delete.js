@@ -4,7 +4,7 @@ const remove = async () => {
     try {
         await fs.rm('src/fs/files/fileToRemove.txt');
     } catch {
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     }
 };
 

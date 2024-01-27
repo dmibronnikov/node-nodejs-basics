@@ -5,13 +5,13 @@ const rename = async () => {
     let destination = 'src/fs/files/properFilename.md'
 
     if (existsSync(destination)) {
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     }
 
     try {
         await fs.rename(source, destination);
     } catch {
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     }
 };
 
